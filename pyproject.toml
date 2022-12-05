@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "code-advent"
+name = "adventcode"
 version = "0.1.0"
 description = "Python solution for AdventCode 2022"
 authors = ["Yaroslav Shatkevich <jarek@thestory.pl>"]
