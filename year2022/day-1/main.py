@@ -1,12 +1,21 @@
-from year2022.models import Elf
-from year2022.utils import read_input
+from year2022 import read_input
+
+
+class Elf:
+    def __init__(self, index):
+        self.name = f'Elf {index}'
+        self.calories = 0
+
+    def __repr__(self):
+        return f'{self.name}: {self.calories}'
+
 
 elves = [Elf(0)]
 
 current_elf = 0
-for line in read_input('input'):
-    if line != '':
-        elves[current_elf].calories += int(line)
+for calories_entry in read_input():
+    if calories_entry != '':
+        elves[current_elf].calories += int(calories_entry)
     else:
         current_elf += 1
         elves.append(Elf(current_elf))

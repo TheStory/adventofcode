@@ -1,6 +1,6 @@
 from functools import reduce
 
-from year2022.utils import read_input
+from year2022 import read_input
 
 letter_ascii_codes = list(range(ord('a'), ord('z') + 1)) + list(range(ord('A'), ord('Z') + 1))
 
@@ -10,8 +10,6 @@ def letter_priority(letter):
 
 
 input_data = read_input()
-# input_data = ['vJrwpWtwJgWrhcsFMMfFFhFp', 'jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL', 'PmmdzqPrVvPwwTWBwg',
-#               'wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn', 'ttgJtRGJQctTZtZT', 'CrZsJsPPZsGzwwsLwLmpwMDw']
 
 priority_sum = 0
 for rucksack in input_data:
@@ -33,4 +31,4 @@ for group_idx in groups:
     badge = list(reduce(lambda a, b: a & set(b), list(map(lambda x: set(x), groups[group_idx]))))[0]
     badges_priority_sum += letter_priority(badge)
 
-print('Badges priority:', badges_priority_sum)
+print('Badges priority sum:', badges_priority_sum)

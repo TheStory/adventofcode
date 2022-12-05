@@ -1,23 +1,9 @@
 import copy
 import re
 
-from year2022.utils import read_input
+from year2022 import read_input
 
-# gifts_stack = ['    [D]    \n',
-#                '[N] [C]    \n',
-#                '[Z] [M] [P]\n',
-#                ' 1   2   3 \n',
-#                '\n',
-#                'move 1 from 2 to 1\n',
-#                'move 3 from 1 to 3\n',
-#                'move 2 from 2 to 1\n',
-#                'move 1 from 1 to 2\n',
-#                ]
 gifts_stack = read_input(strip=False)
-
-# stack_data_last_line = 3
-# columns_amount = 9
-# operations_start_line = 10
 
 stack_data_last_line = 8
 columns_amount = 9

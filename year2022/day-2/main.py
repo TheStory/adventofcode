@@ -1,13 +1,17 @@
-from year2022.utils import read_input
+from year2022 import read_input
 
 STONE = 'X'
 PAPER = 'Y'
 SCISSORS = 'Z'
 
+DRAW = 'draw'
+WIN = 'win'
+LOST = 'lost'
+
 choices_map = {
-    'A': STONE,  # kamien
-    'B': PAPER,  # papier
-    'C': SCISSORS,  # nozyce
+    'A': STONE,
+    'B': PAPER,
+    'C': SCISSORS,
 }
 
 points = {
@@ -15,10 +19,6 @@ points = {
     PAPER: 2,
     SCISSORS: 3,
 }
-
-DRAW = 'draw'
-WIN = 'win'
-LOST = 'lost'
 
 result_points = {
     LOST: 0,
@@ -44,7 +44,6 @@ def calculate_score(my_choice, opp_choice):
 
 
 my_score = 0
-# for line in ['A Y', 'B X', 'C Z']:
 for line in read_input():
     opp, my = line.split(' ')
     my_score += calculate_score(my, opp)
@@ -58,7 +57,6 @@ need_to = {
 }
 
 my_score = 0
-# for line in ['A Y', 'B X', 'C Z']:
 for line in read_input():
     opp, need = line.split(' ')
     my = choices_map[opp]

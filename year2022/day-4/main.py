@@ -1,13 +1,5 @@
-from year2022.utils import read_input
+from year2022 import read_input
 
-# input_data = [
-#     '2-4,6-8',
-#     '2-3,4-5',
-#     '5-7,7-9',
-#     '2-8,3-7',
-#     '6-6,4-6',
-#     '2-6,4-8',
-# ]
 work_pairs = read_input()
 
 
@@ -30,5 +22,5 @@ for pair in work_pairs:
     if len(list(set(range(elf_1_from, elf_1_to + 1)) & set(range(elf_2_from, elf_2_to + 1)))) > 0:
         partial_overlap += 1
 
-print('Complete:', complete_overlap)
-print('Partial:', partial_overlap)
+print('Complete overlap:', complete_overlap)
+print('Partial overlap:', partial_overlap)
