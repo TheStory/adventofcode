@@ -1,13 +1,14 @@
 [tool.poetry]
 name = "code-advent"
 version = "0.1.0"
-description = ""
+description = "Python solution for AdventCode 2022"
 authors = ["Yaroslav Shatkevich <jarek@thestory.pl>"]
 readme = "README.md"
-packages = [{include = "code_advent"}]
+packages = [{include = "adventcode"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"
+pytest = "^7.2.0"
 
 
 [build-system]
