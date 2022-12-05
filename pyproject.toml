@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "code-advent"
+version = "0.1.0"
+description = ""
+authors = ["Yaroslav Shatkevich <jarek@thestory.pl>"]
+readme = "README.md"
+packages = [{include = "code_advent"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
