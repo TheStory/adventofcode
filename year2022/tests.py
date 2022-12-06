@@ -3,6 +3,7 @@ from year2022.day_2 import day_2
 from year2022.day_3 import day_3
 from year2022.day_4 import day_4
 from year2022.day_5 import day_5
+from year2022.day_6 import day_6
 
 
 def test_day_1():
@@ -64,3 +65,23 @@ def test_day_4():
 
 def test_day_5():
     assert list(day_5()) == ['TLNGFGMFN', 'FGLQJCMBD']
+
+
+class TestDay6:
+    test_data = [
+        ('mjqjpqmgbljsphdztnvjfqwrcgsmlb', 7, 19),
+        ('bvwbjplbgvbhsrlpgdmjqwftvncz', 5, 23),
+        ('nppdvjthqldpwncqszvftbrmjlhg', 6, 23),
+        ('nznrnfrfntjfmvfwmzdfjlvtqnbhcprsg', 10, 29),
+        ('zcfzfwzzqfrljwzlrfnpqdbhtmscgvjw', 11, 26),
+    ]
+
+    def test_part_1(self):
+        for test_input, expected_1, expected_2 in self.test_data:
+            assert day_6(test_input) == expected_1
+        assert day_6() == 1855
+
+    def test_part_2(self):
+        for test_input, expected_1, expected_2 in self.test_data:
+            assert day_6(test_input, part_2=True) == expected_2
+        assert day_6(part_2=True) == 3256
