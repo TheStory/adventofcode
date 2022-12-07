@@ -1,16 +1,13 @@
-The reason why
---------------
+## The reason why
 
-The [AdventofCode](https://adventofcode.com/2022) is a great event to code for fun, not only for work. We took up the
+The [AdventOfCode](https://adventofcode.com/2022) is a great event to code for fun, not only for work. We took up the
 challenge and share the solved tasks in Python for the 2022 edition.
 
-Get started
------------
+## Get started
 
 Install dependencies with \`poetry install\`, run \`pytest year2022\` and X-mass is coming! Ho! Ho! Ho! :santa:
 
-The Story
----------
+## The Story
 
 **THE STORY** is an award-winning Poland-based user experience & web development company. Serving startups and corporate
 clients from Germany, Switzerland, US, UK, and Poland.
