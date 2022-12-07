@@ -1,9 +1,11 @@
+from year2022 import read_input
 from year2022.day_1 import day_1
 from year2022.day_2 import day_2
 from year2022.day_3 import day_3
 from year2022.day_4 import day_4
 from year2022.day_5 import day_5
 from year2022.day_6 import day_6
+from year2022.day_7 import day_7
 
 
 def test_day_1():
@@ -85,3 +87,17 @@ class TestDay6:
         for test_input, expected_1, expected_2 in self.test_data:
             assert day_6(test_input, part_2=True) == expected_2
         assert day_6(part_2=True) == 3256
+
+
+class TestDay7:
+    @property
+    def test_data(self):
+        return read_input(custom_path='data/day_7_test.txt')
+
+    def test_part_1(self):
+        assert day_7(self.test_data) == 95437
+        assert day_7() == 1845346
+
+    def test_part_2(self):
+        assert day_7(self.test_data, variant_2=True) == 24933642
+        assert day_7(variant_2=True) == 3636703
