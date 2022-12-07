@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Python solution for AdventCode 2022"
 authors = ["Yaroslav Shatkevich <jarek@thestory.pl>"]
 readme = "README.md"
-packages = [{include = "adventcode"}]
+packages = [{include = "year2022"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"
