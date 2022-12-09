@@ -6,6 +6,7 @@ from year2022.day_4 import day_4
 from year2022.day_5 import day_5
 from year2022.day_6 import day_6
 from year2022.day_7 import day_7
+from year2022.day_8 import day_8
 
 
 def test_day_1():
@@ -101,3 +102,21 @@ class TestDay7:
     def test_part_2(self):
         assert day_7(self.test_data, variant_2=True) == 24933642
         assert day_7(variant_2=True) == 3636703
+
+
+class TestDay8:
+    test_data = [
+        '30373',
+        '25512',
+        '65332',
+        '33549',
+        '35390',
+    ]
+
+    def test_part_1(self):
+        assert day_8(self.test_data) == 21
+        assert day_8() == 1681
+
+    def test_part_2(self):
+        assert day_8(self.test_data, variant_2=True) == 8
+        assert day_8(variant_2=True) == 201684
