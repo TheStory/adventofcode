@@ -1,5 +1,6 @@
 from year2022 import read_input
 from year2022.day_1 import day_1
+from year2022.day_10 import day_10
 from year2022.day_2 import day_2
 from year2022.day_3 import day_3
 from year2022.day_4 import day_4
@@ -279,3 +280,10 @@ class TestDay9:
         assert rope.tail.positions_visited == 36
         _, rope = day_9()
         assert rope.tail.positions_visited == 2327
+
+
+class TestDay10:
+    def test_part_1(self):
+        assert day_10(read_input(custom_path='data/day_10_test.txt')) == 13140
+        print()
+        assert day_10() == 13720
