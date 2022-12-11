@@ -7,6 +7,7 @@ from year2022.day_5 import day_5
 from year2022.day_6 import day_6
 from year2022.day_7 import day_7
 from year2022.day_8 import day_8
+from year2022.day_9 import day_9, Rope
 
 
 def test_day_1():
@@ -120,3 +121,161 @@ class TestDay8:
     def test_part_2(self):
         assert day_8(self.test_data, variant_2=True) == 8
         assert day_8(variant_2=True) == 201684
+
+
+class TestDay9:
+    @property
+    def test_data(self):
+        return read_input(custom_path='data/day_9_test.txt')
+
+    def test_touch_detection(self):
+        rope = Rope(2)
+        assert rope.are_knots_touching(rope.head, rope.tail)
+        rope.head.set_position(2, 1)
+        assert rope.are_knots_touching(rope.head, rope.tail)
+        rope.head.set_position(3, 1)
+        assert not rope.are_knots_touching(rope.head, rope.tail)
+        rope.tail.set_position(2, 1)
+        assert rope.are_knots_touching(rope.head, rope.tail)
+        rope.head.set_position(4, 1)
+        assert not rope.are_knots_touching(rope.head, rope.tail)
+        rope.tail.set_position(3, 1)
+        assert rope.are_knots_touching(rope.head, rope.tail)
+        rope.head.set_position(5, 1)
+        assert not rope.are_knots_touching(rope.head, rope.tail)
+        rope.tail.set_position(4, 1)
+        assert rope.are_knots_touching(rope.head, rope.tail)
+        rope.head.set_position(5, 2)
+        assert rope.are_knots_touching(rope.head, rope.tail)
+        rope.head.set_position(5, 2)
+        assert rope.are_knots_touching(rope.head, rope.tail)
+        rope.head.set_position(5, 3)
+        assert not rope.are_knots_touching(rope.head, rope.tail)
+        rope.tail.set_position(5, 2)
+        assert rope.are_knots_touching(rope.head, rope.tail)
+        rope.head.set_position(5, 4)
+        assert not rope.are_knots_touching(rope.head, rope.tail)
+        rope.tail.set_position(5, 3)
+        assert rope.are_knots_touching(rope.head, rope.tail)
+        rope.head.set_position(5, 5)
+        assert not rope.are_knots_touching(rope.head, rope.tail)
+        rope.tail.set_position(5, 4)
+        assert rope.are_knots_touching(rope.head, rope.tail)
+        rope.head.set_position(4, 5)
+        assert rope.are_knots_touching(rope.head, rope.tail)
+        rope.head.set_position(3, 5)
+        assert not rope.are_knots_touching(rope.head, rope.tail)
+        rope.tail.set_position(4, 5)
+        assert rope.are_knots_touching(rope.head, rope.tail)
+        rope.head.set_position(2, 5)
+        assert not rope.are_knots_touching(rope.head, rope.tail)
+        rope.tail.set_position(3, 5)
+        assert rope.are_knots_touching(rope.head, rope.tail)
+        rope.head.set_position(2, 4)
+        assert rope.are_knots_touching(rope.head, rope.tail)
+        rope.head.set_position(3, 4)
+        assert rope.are_knots_touching(rope.head, rope.tail)
+        rope.head.set_position(4, 4)
+        assert rope.are_knots_touching(rope.head, rope.tail)
+        rope.head.set_position(5, 4)
+        assert not rope.are_knots_touching(rope.head, rope.tail)
+        rope.tail.set_position(4, 4)
+        assert rope.are_knots_touching(rope.head, rope.tail)
+        rope.head.set_position(6, 4)
+        assert not rope.are_knots_touching(rope.head, rope.tail)
+        rope.tail.set_position(5, 4)
+        assert rope.are_knots_touching(rope.head, rope.tail)
+        rope.head.set_position(6, 3)
+        assert rope.are_knots_touching(rope.head, rope.tail)
+        rope.head.set_position(5, 3)
+        assert rope.are_knots_touching(rope.head, rope.tail)
+        rope.head.set_position(4, 3)
+        assert rope.are_knots_touching(rope.head, rope.tail)
+        rope.head.set_position(3, 3)
+        assert not rope.are_knots_touching(rope.head, rope.tail)
+        rope.tail.set_position(4, 3)
+        assert rope.are_knots_touching(rope.head, rope.tail)
+        rope.head.set_position(2, 3)
+        assert not rope.are_knots_touching(rope.head, rope.tail)
+        rope.tail.set_position(3, 3)
+        assert rope.are_knots_touching(rope.head, rope.tail)
+        rope.head.set_position(1, 3)
+        assert not rope.are_knots_touching(rope.head, rope.tail)
+        rope.tail.set_position(2, 3)
+        assert rope.are_knots_touching(rope.head, rope.tail)
+        rope.head.set_position(2, 3)
+        assert rope.are_knots_touching(rope.head, rope.tail)
+        rope.head.set_position(3, 3)
+        assert rope.are_knots_touching(rope.head, rope.tail)
+
+    def test_move_head(self):
+        rope = Rope(2)
+        rope.move_head('R', 1)
+        assert rope.head.x == 2
+        assert rope.head.y == 1
+        assert rope.tail.x == 1
+        assert rope.tail.y == 1
+        rope.move_head('R', 1)
+        assert rope.head.x == 3
+        assert rope.head.y == 1
+        assert rope.tail.x == 2
+        assert rope.tail.y == 1
+        rope.move_head('R', 1)
+        assert rope.head.x == 4
+        assert rope.head.y == 1
+        assert rope.tail.x == 3
+        assert rope.tail.y == 1
+        rope.move_head('U', 1)
+        assert rope.head.x == 4
+        assert rope.head.y == 2
+        assert rope.tail.x == 3
+        assert rope.tail.y == 1
+        rope.move_head('U', 1)
+        assert rope.head.x == 4
+        assert rope.head.y == 3
+        assert rope.tail.x == 4
+        assert rope.tail.y == 2
+        rope.move_head('R', 1)
+        assert rope.head.x == 5
+        assert rope.head.y == 3
+        assert rope.tail.x == 4
+        assert rope.tail.y == 2
+        rope.move_head('R', 1)
+        assert rope.head.x == 6
+        assert rope.head.y == 3
+        assert rope.tail.x == 5
+        assert rope.tail.y == 3
+        rope.move_head('D', 1)
+        assert rope.head.x == 6
+        assert rope.head.y == 2
+        assert rope.tail.x == 5
+        assert rope.tail.y == 3
+        rope.move_head('D', 1)
+        assert rope.head.x == 6
+        assert rope.head.y == 1
+        assert rope.tail.x == 6
+        assert rope.tail.y == 2
+        rope.move_head('L', 1)
+        assert rope.head.x == 5
+        assert rope.head.y == 1
+        assert rope.tail.x == 6
+        assert rope.tail.y == 2
+        rope.move_head('L', 1)
+        assert rope.head.x == 4
+        assert rope.head.y == 1
+        assert rope.tail.x == 5
+        assert rope.tail.y == 1
+
+    def test_part_1(self):
+        rope, _ = day_9(self.test_data)
+        assert rope.tail.positions_visited == 13
+        rope, _ = day_9()
+        assert rope.tail.positions_visited == 5960
+
+    def test_part_2(self):
+        _, rope = day_9(self.test_data)
+        assert rope.tail.positions_visited == 1
+        _, rope = day_9(read_input(custom_path='data/day_9_test_2.txt'))
+        assert rope.tail.positions_visited == 36
+        _, rope = day_9()
+        assert rope.tail.positions_visited == 2327
